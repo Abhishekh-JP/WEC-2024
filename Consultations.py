@@ -63,7 +63,6 @@ def consultations():
 
             tk.Label(consultation_window, text=f"Schedule Consultation with {doctor.name}", font=("Helvetica", 14)).pack(pady=10)
 
-            # Use DateEntry widget instead of Entry for date
             date_entry = DateEntry(consultation_window, width=20, background='darkblue', foreground='white', borderwidth=2)
             date_entry.pack(pady=5)
 
@@ -90,7 +89,6 @@ def consultations():
             success_message = f"Scheduled consultation with {doctor.name} on {date} at {time}"
             messagebox.showinfo("Success", success_message)
 
-    # if __name__ == "__main__":
     root = tk.Tk()
     root.title("Doctor Information")
     root.geometry("700x300")
@@ -117,7 +115,7 @@ def consultations():
     buttons = []
 
     for i, doctor in enumerate(doctors_list):
-        button = DoctorButton(frame_buttons, doctor, width=40, height=4)  # Adjust width and height as needed
+        button = DoctorButton(frame_buttons, doctor, width=40, height=4)
         buttons.append(button)
         button.grid(row=i // 2, column=i % 2, padx=(10, 20), pady=10)
 
